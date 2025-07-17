@@ -1,5 +1,5 @@
 from sqlalchemy import Column, BIGINT, String, ForeignKey
-from ..settings.base import Base
+from src.models.sqlite.settings.base import Base
 
 class PeopleTable(Base):
     __tablename__ = "people"
@@ -12,4 +12,3 @@ class PeopleTable(Base):
 
     def __repr__(self):
         return f"People [name={self.first_name},last_name={self.last_name}, pet_id={self.pet_id}]"
-    

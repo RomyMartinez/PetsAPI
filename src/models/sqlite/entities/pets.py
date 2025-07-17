@@ -1,5 +1,5 @@
 from sqlalchemy import Column, BIGINT, String
-from ..settings.base import Base
+from src.models.sqlite.settings.base import Base
 
 class PetsTable(Base):
     __tablename__ = "pets"
@@ -9,4 +9,4 @@ class PetsTable(Base):
     type = Column(String, nullable=False)
 
     def __repr__(self):
-        return f"PetsTable [name={self.name}, type={self.type}]"
+        return f"Pets [name={self.name}, type={self.type}]"
