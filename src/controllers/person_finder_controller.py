@@ -1,11 +1,11 @@
 from src.models.sqlite.interfaces.people_repository import PeopleRepositoryInterface
 from src.models.sqlite.entities.people import PeopleTable
-
-class PersonFinderController:
+from src.controllers.interfaces.person_finder_controller import PersonFinderControllerInterface
+class PersonFinderController(PersonFinderControllerInterface):
     def __init__(self, people_repository: PeopleRepositoryInterface) -> None:
         self.__people_repository = people_repository
 
-    def find(self, person_id: int) -> PeopleTable:
+    def find(self, person_id: int) -> dict:
         person = self.__find_person_in_db(person_id)
         response = self.__format_response(person)
 
