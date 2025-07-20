@@ -4,7 +4,7 @@ from src.views.http_types.http_response import HttpResponse
 from src.views.person_finder_view import PersonFinderView
 
 class MockPeopleFinderController():
-    def find_person(self, person_id: int) -> dict:
+    def find(self, person_id: int) -> dict:
         return {
             "data": {
                 "type": "Person",

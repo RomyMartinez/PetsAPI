@@ -4,7 +4,7 @@ from src.views.http_types.http_response import HttpResponse
 from src.views.person_creator_view import PersonCreatorView
 
 class MockPeopleCreatorController():
-    def create_person(self, person_info: dict) -> dict:
+    def create(self, person_info: dict) -> dict:
         return {
             "data": {
                 "type": "Person",

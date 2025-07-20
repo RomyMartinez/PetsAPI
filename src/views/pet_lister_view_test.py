@@ -3,7 +3,7 @@ from src.views.http_types.http_response import HttpResponse
 from src.views.pet_lister_view import PetListerView
 
 class MockPetsListerController():
-    def list_pets(self) -> dict:
+    def list(self) -> dict:
         return {
             "data": {
                 "type": "Pets",

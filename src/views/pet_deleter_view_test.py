@@ -3,7 +3,7 @@ from src.views.http_types.http_response import HttpResponse
 from .pet_deleter_view import PetDeleterView
 
 class MockPetDeleterController():
-    def delete_pet(self, person_id: int) -> None:
+    def delete(self, person_id: int) -> None:
         pass
 
 def test_delete():
