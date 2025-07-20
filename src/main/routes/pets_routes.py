@@ -7,14 +7,15 @@ pets_routes_bp = Blueprint("pets", __name__)
 
 @pets_routes_bp.route("/pets", methods=["GET"])
 def list_pets():
+    http_request = HttpRequest()
     view = pet_lister_composer()
-    http_response = view.handle(None)
+    http_response = view.handle(http_request)
 
     return jsonify(http_response.body), http_response.status_code
 
-@pets_routes_bp.route("/pets/<int:pet_id>", methods=["DELETE"])
-def delete_pet(pet_id):
-    http_request = HttpRequest(param={"pet_id": pet_id})
+@pets_routes_bp.route("/pets/<string:pet_name>", methods=["DELETE"])
+def delete_pet(pet_name):
+    http_request = HttpRequest(param={"pet_name": pet_name})
     view = pet_deleter_composer()
     http_response = view.handle(http_request)
 
